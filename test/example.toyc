@@ -1,0 +1,85 @@
+void print_nothing() {
+    ;
+    return;
+}
+
+int abs(int x) {
+    if (x < 0) {
+        return -x;
+    } else {
+        return x;
+    }
+}
+
+int gcd(int a, int b) {
+    while (b != 0) {
+        int t = b;
+        b = a % b;
+        a = t;
+    }
+    return a;
+}
+
+int fib(int n) {
+    if (n <= 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+
+int max(int a, int b) {
+    if (a > b) {
+        return a;
+    } else {
+        return b;
+    }
+}
+
+void print_if_even(int x) {
+    if ((x % 2) == 0) {
+        ; // 空语句
+    } else {
+        return;
+    }
+}
+
+int fact(int n) {
+    int res = 1;
+    int i = 1;
+    while (i <= n) {
+        res = res * i;
+        i = i + 1;
+    }
+    return res;
+}
+
+int main() {
+    int x = 3;
+    int y = 5;
+    int z = 0;
+    int m = max(x, y);
+    int f = fact(m);
+    int sum = 0;
+    int i = 0;
+    while (i < 10) {
+        if ((i % 2 == 0 && i != 0) || (i == 1)) {
+            sum = sum + i;
+        } else {
+            i = i + 1;
+            continue;
+        }
+        if (sum > 20) {
+            break;
+        }
+        i = i + 1;
+    }
+    {
+        int z = 100;
+        sum = sum + z;
+    }
+    if ((x < y && y < 10) || (x == 3 && y != 0)) {
+        z = f + m * (x - y) / 2;
+    } else {
+        z = 42;
+    }
+    print_if_even(z);
+    return sum + z + m + f;
+}
