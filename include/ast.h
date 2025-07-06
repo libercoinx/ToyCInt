@@ -101,5 +101,3 @@ struct FuncCall : ASTNode {
     FuncCall(const std::string& name, const std::vector<ASTNodePtr>& args)
         : name(name), args(args) {}
 };
-
-// 可扩展更多AST节点类型 
